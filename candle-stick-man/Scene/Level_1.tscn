@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgui4xsdbrbic"]
+
+[ext_resource type="PackedScene" uid="uid://dwwugu8yky0nj" path="res://Scene/Player.tscn" id="1_y3pq2"]
+[ext_resource type="Script" path="res://Scripts/PosPotGen.gd" id="2_ugk37"]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_y3pq2")]
+position = Vector2(16, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Pos Pot" type="Node2D" parent="."]
+script = ExtResource("2_ugk37")
+
+[node name="Pos 1" type="Marker2D" parent="Pos Pot"]
+position = Vector2(110, -48)
+
+[node name="Pos 2" type="Marker2D" parent="Pos Pot"]
+position = Vector2(0, -65)
+
+[node name="Pos 3" type="Marker2D" parent="Pos Pot"]
+position = Vector2(-99, -50)
+
+[node name="Pos 4" type="Marker2D" parent="Pos Pot"]
+position = Vector2(111, 40)
+
+[node name="Pos 5" type="Marker2D" parent="Pos Pot"]
+position = Vector2(0, 49)
+
+[node name="Pos 6" type="Marker2D" parent="Pos Pot"]
+position = Vector2(-97, 36)

@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://dk5ydrrdeoo11"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_e7qa0"]
+[ext_resource type="Texture2D" uid="uid://bj74jm5y084ou" path="res://Assest/Main_Menu-Sheet.png" id="2_kvlci"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53fva"]
+atlas = ExtResource("2_kvlci")
+region = Rect2(0, 128, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ch52"]
+atlas = ExtResource("2_kvlci")
+region = Rect2(96, 128, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e672c"]
+atlas = ExtResource("2_kvlci")
+region = Rect2(0, 192, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy3rh"]
+atlas = ExtResource("2_kvlci")
+region = Rect2(96, 192, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjnpa"]
+atlas = ExtResource("2_kvlci")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpmcn"]
+atlas = ExtResource("2_kvlci")
+region = Rect2(0, 64, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxcrv"]
+atlas = ExtResource("2_kvlci")
+region = Rect2(96, 64, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wkdaa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53fva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ch52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e672c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy3rh")
+}],
+"loop": true,
+"name": &"Options",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjnpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpmcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxcrv")
+}],
+"loop": true,
+"name": &"Start",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e7qa0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -156.0
+offset_right = -119.44
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.37, 5.37)
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 360.0
+offset_right = 459.13
+offset_bottom = 391.0
+scale = Vector2(5.085, 5.085)
+
+[node name="Options" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Options"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 328)
+scale = Vector2(12.0521, 10.1563)
+sprite_frames = SubResource("SpriteFrames_wkdaa")
+animation = &"Start"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]

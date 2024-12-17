@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1gc6n76krq3v"]
+
+[ext_resource type="PackedScene" uid="uid://dwwugu8yky0nj" path="res://Scene/Player.tscn" id="1_iir4c"]
+[ext_resource type="PackedScene" uid="uid://dnqhmhghpo17n" path="res://Scene/dev_art.tscn" id="2_ta84i"]
+[ext_resource type="PackedScene" uid="uid://d0dyrqcwf2eb" path="res://Scene/HomeLessMan1.tscn" id="3_rsqil"]
+
+[node name="Dumpster Scene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Dev art" parent="." instance=ExtResource("2_ta84i")]
+position = Vector2(62, 6)
+scale = Vector2(3.52006, 9.68183)
+
+[node name="Player" parent="." instance=ExtResource("1_iir4c")]
+position = Vector2(60, -31)
+
+[node name="Area2D" parent="." instance=ExtResource("3_rsqil")]
+position = Vector2(-113, -45)
