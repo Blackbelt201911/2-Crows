@@ -1,5 +1,8 @@
-extends Camera2D
+extends PointLight2D
 
+var warm1 = 51
+var warm2 = 45
+var warm3 = 35
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

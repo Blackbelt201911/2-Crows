@@ -1,9 +1,8 @@
-[gd_scene load_steps=122 format=3 uid="uid://dwwugu8yky0nj"]
+[gd_scene load_steps=121 format=3 uid="uid://dwwugu8yky0nj"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_pdlej"]
 [ext_resource type="Texture2D" uid="uid://dho1qyj614k7o" path="res://Assest/Sprite-0003-Sheet.png" id="2_hh46j"]
-[ext_resource type="Script" path="res://Scripts/Items.gd" id="3_68v2s"]
-[ext_resource type="Script" path="res://Scripts/ItemGlobal.gd" id="4_4j3n3"]
+[ext_resource type="Script" path="res://Scene/Items.gd" id="3_68v2s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qsjl"]
 atlas = ExtResource("2_hh46j")
@@ -891,7 +890,6 @@ position = Vector2(1, -2)
 color = Color(0.933883, 0.63844, 0.315344, 1)
 energy = 1.6
 texture = SubResource("GradientTexture2D_uvvyr")
-script = ExtResource("4_4j3n3")
 
 [node name="LightRange" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m6lyb")

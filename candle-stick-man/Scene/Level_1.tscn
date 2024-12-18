@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://cgui4xsdbrbic"]
 
 [ext_resource type="PackedScene" uid="uid://dwwugu8yky0nj" path="res://Scene/Player.tscn" id="1_y3pq2"]
-[ext_resource type="Script" path="res://CameraController.gd" id="2_gr4m3"]
+[ext_resource type="Script" path="res://Scripts/CameraController.gd" id="2_gr4m3"]
 [ext_resource type="Script" path="res://Scripts/PosPotGen.gd" id="2_ugk37"]
 [ext_resource type="Texture2D" uid="uid://d3kki83eu38sn" path="res://Assest/Stone_ground.png" id="3_dqyps"]
 
