@@ -868,9 +868,12 @@ fill_to = Vector2(1, 0.00917431)
 radius = 27.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 5
 script = ExtResource("1_pdlej")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 4
+y_sort_enabled = true
 scale = Vector2(1.00309, 1)
 sprite_frames = SubResource("SpriteFrames_3tcno")
 animation = &"BW"
@@ -882,8 +885,8 @@ shape = SubResource("CapsuleShape2D_8foeo")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(1, -2)
-color = Color(0.87034, 0.571616, 0.22793, 1)
-energy = 0.71
+color = Color(0.933883, 0.63844, 0.315344, 1)
+energy = 1.6
 texture = SubResource("GradientTexture2D_uvvyr")
 
 [node name="LightRange" type="CollisionShape2D" parent="."]

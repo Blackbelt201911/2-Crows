@@ -269,7 +269,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[node name="H3" type="Area2D"]
+z_index = 2
 scale = Vector2(1, 1.01203)
 script = ExtResource("1_1pxqb")
 

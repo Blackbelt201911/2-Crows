@@ -7,11 +7,30 @@ var distance
 var warm1 = 51
 var warm2 = 45
 var warm3 = 35
+@onready var animation_player = $AnimatedSprite2D
 
 func _ready():
+	
+	
+	
+	match self.name:
+		"H1":
+			animation_player.play("Breathing1")  # Play "intro_anim" in Scene1
+		"H2":
+			animation_player.play("Breathing2")  # Play "level_start" in Scene2
+		"H3":
+			animation_player.play("Breathing3")  # Play "boss_intro" in Scene3
+		"H4":
+			animation_player.play("Breathing4")  # Default animation if the scene doesn't match
+
 	# Connect to the signal when a body enters the area.
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)  # To handle when the body exits
+	
+
+	
+	
+	
 	
 	# Get the player node from the Player group
 	var players = get_tree().get_nodes_in_group("Player")

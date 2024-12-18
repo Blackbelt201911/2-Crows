@@ -269,7 +269,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[node name="H4" type="Area2D"]
+z_index = 2
 script = ExtResource("1_mxe0l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

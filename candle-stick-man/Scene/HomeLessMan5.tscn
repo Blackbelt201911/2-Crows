@@ -268,7 +268,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[node name="H5" type="Area2D"]
+z_index = 2
 position = Vector2(1, 0)
 script = ExtResource("1_cfdy4")
 
