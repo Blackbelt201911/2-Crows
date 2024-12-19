@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnqhmhghpo17n"]
+[gd_scene load_steps=3 format=3 uid="uid://dnqhmhghpo17n"]
 
 [ext_resource type="Texture2D" uid="uid://din81512a5ki3" path="res://Assest/DevArt 1.png" id="1_q4eym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gqyu"]
+size = Vector2(50, 50)
 
 [node name="Dev art" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
 texture = ExtResource("1_q4eym")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_5gqyu")

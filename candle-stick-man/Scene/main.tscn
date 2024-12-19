@@ -9,12 +9,11 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="Dev art" parent="." instance=ExtResource("2_ta84i")]
-position = Vector2(62, 6)
-scale = Vector2(3.52006, 9.68183)
-
 [node name="Player" parent="." instance=ExtResource("1_iir4c")]
 position = Vector2(60, -31)
 
-[node name="Area2D" parent="." instance=ExtResource("3_rsqil")]
-position = Vector2(-113, -45)
+[node name="Dev art" parent="." instance=ExtResource("2_ta84i")]
+position = Vector2(-70, -29)
+
+[node name="H1" parent="." instance=ExtResource("3_rsqil")]
+position = Vector2(-26, 44)

@@ -12,6 +12,7 @@ var warm3 = Globals.warm3
 
 @onready var animation_player = $AnimatedSprite2D
 
+
 func _ready():
 	match self.name:
 		"H1":
@@ -44,7 +45,10 @@ func _process(delta):
 	if Colid and heat < 125 and player:
 		
 		distance = global_position.distance_to(player.position)
-		print(distance)
+		#print(distance)
+		if distance < 16:
+			queue_free()
+		
 		if distance < warm1:
 			heat += 0.12
 			print(heat)

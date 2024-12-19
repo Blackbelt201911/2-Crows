@@ -527,4 +527,4 @@ shape = SubResource("CapsuleShape2D_xj0wl")
 z_index = 1
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_j3c8q")
-animation = &"BackBreathing4"
+animation = &"Breathing1"

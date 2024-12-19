@@ -5,6 +5,10 @@
 [ext_resource type="Script" path="res://Scripts/Items.gd" id="3_68v2s"]
 [ext_resource type="Script" path="res://Scripts/ItemGlobal.gd" id="4_4j3n3"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8foeo"]
+radius = 0.696221
+height = 8.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qsjl"]
 atlas = ExtResource("2_hh46j")
 region = Rect2(112, 112, 16, 16)
@@ -852,26 +856,28 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8foeo"]
-radius = 0.696221
-height = 8.0
-
-[sub_resource type="Gradient" id="Gradient_e3vwq"]
+[sub_resource type="Gradient" id="Gradient_01kh5"]
 offsets = PackedFloat32Array(0, 0.779221)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_uvvyr"]
-gradient = SubResource("Gradient_e3vwq")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_64l6e"]
+gradient = SubResource("Gradient_01kh5")
 fill = 1
 fill_from = Vector2(0.477064, 0.481651)
 fill_to = Vector2(1, 0.00917431)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m6lyb"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_uyg1p"]
 radius = 27.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 5
 script = ExtResource("1_pdlej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+scale = Vector2(1.43633, 1)
+shape = SubResource("CapsuleShape2D_8foeo")
+script = ExtResource("3_68v2s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 4
@@ -880,19 +886,13 @@ scale = Vector2(1.00309, 1)
 sprite_frames = SubResource("SpriteFrames_3tcno")
 animation = &"BW"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2)
-scale = Vector2(1.43633, 1)
-shape = SubResource("CapsuleShape2D_8foeo")
-script = ExtResource("3_68v2s")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(1, -2)
 color = Color(0.933883, 0.63844, 0.315344, 1)
 energy = 1.6
-texture = SubResource("GradientTexture2D_uvvyr")
+texture = SubResource("GradientTexture2D_64l6e")
 script = ExtResource("4_4j3n3")
 
 [node name="LightRange" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_m6lyb")
+shape = SubResource("CircleShape2D_uyg1p")
 debug_color = Color(0.588235, 0.52549, 0.45098, 0)
