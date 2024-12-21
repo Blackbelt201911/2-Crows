@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 75
-@export var friction = 0.25
-@export var acceleration = 0.1
+var speed = Globals.speed
+var friction = Globals.friction
+var acceleration = Globals.acceleration
 
 # Persist the last move direction
 var lastMove = "Right"
@@ -21,6 +21,8 @@ func get_input():
 
 func _DoArtStuff():
 	var direction = get_input()
+	if Globals.PlayerHelth <= 0:
+		get_tree().change_scene_to_file("res://Scene/Death.tscn")
 
 	# Handle movement animations
 	if direction.x == 1:

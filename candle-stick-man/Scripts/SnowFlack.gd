@@ -29,10 +29,9 @@ func Move(delta: float):
 	position.x -= move_speed * delta  # Move left (decreasing x)
 	position.y += move_speed * delta  # Move down (increasing y)
 	if distance >= 200:
-		print("die")
 		queue_free()
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("SnowFlackDel"):
-		get_tree().change_scene_to_file("res://Scene/Death.tscn")
+		Globals.PlayerHelth = Globals.PlayerHelth - 2

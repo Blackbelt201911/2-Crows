@@ -28,6 +28,6 @@ func doScene():
 	await get_tree().create_timer(.3).timeout
 	Light.global_position = Third
 	await get_tree().create_timer(1).timeout
-	Player.global_position = Light.global_position +Vector2(0,25)
+	Player.global_position = Light.global_position + Vector2(0,25)
 	Light.queue_free()
 	$".".stop()

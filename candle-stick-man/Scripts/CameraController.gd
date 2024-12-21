@@ -7,8 +7,8 @@ extends Camera2D
 var follow_threshold = 55
 
 # Camera speed (for smooth following)
-var camera_speed = 5
-var damping_factor = 0.09 # The lower the value, the smoother the movement
+var camera_speed = Globals.camera_speed
+var damping_factor = Globals.damping_factor # The lower the value, the smoother the movement
 
 # Velocity for smoothing the camera movement
 var velocity = Vector2()

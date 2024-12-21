@@ -17,13 +17,13 @@ radius = 27.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
+[node name="PointLight2D2" type="PointLight2D" parent="." groups=["Lights"]]
 position = Vector2(1, -2)
 color = Color(0.933883, 0.63844, 0.315344, 1)
 energy = 1.6
 texture = SubResource("GradientTexture2D_llvix")
 script = ExtResource("1_ghg0f")
 
-[node name="LightRange" type="CollisionShape2D" parent="."]
+[node name="LightRange" type="CollisionShape2D" parent="." groups=["LightRange"]]
 shape = SubResource("CircleShape2D_xceji")
 debug_color = Color(0.588235, 0.52549, 0.45098, 0)

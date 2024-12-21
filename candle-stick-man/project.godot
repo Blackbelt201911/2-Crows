@@ -23,6 +23,8 @@ Globals="*res://Scripts/ItemGlobal.gd"
 
 Player=""
 SnowFlackDel=""
+Lights=""
+LightRange=""
 
 [input]
 
