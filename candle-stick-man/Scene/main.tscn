@@ -1,7 +1,8 @@
-[gd_scene load_steps=53 format=3 uid="uid://b1gc6n76krq3v"]
+[gd_scene load_steps=54 format=3 uid="uid://b1gc6n76krq3v"]
 
 [ext_resource type="PackedScene" uid="uid://dwwugu8yky0nj" path="res://Scene/Player.tscn" id="1_iir4c"]
 [ext_resource type="Texture2D" uid="uid://bh2th0e6c17lb" path="res://Assest/Level_1_animation-Sheet.png" id="2_h0jfu"]
+[ext_resource type="PackedScene" uid="uid://fohgd5tq1vwn" path="res://Scene/PlayerLight2.tscn" id="2_nltoi"]
 [ext_resource type="Script" path="res://Scripts/dumpstere_scene.gd" id="3_n3028"]
 [ext_resource type="Script" path="res://Scripts/ItemGlobal.gd" id="4_0nstw"]
 
@@ -321,7 +322,7 @@ fill_to = Vector2(1, 0.00917431)
 size = Vector2(97, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjf4n"]
-size = Vector2(86, 11)
+size = Vector2(86, 35.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3k8hg"]
 size = Vector2(20, 12)
@@ -333,7 +334,9 @@ position = Vector2(-7, -45)
 zoom = Vector2(4, 4)
 
 [node name="Player" parent="." instance=ExtResource("1_iir4c")]
-position = Vector2(101, 110)
+position = Vector2(222, -1)
+
+[node name="CharacterBody2D" parent="Player" instance=ExtResource("2_nltoi")]
 
 [node name="Dumpstere Scene" type="AnimatedSprite2D" parent="."]
 position = Vector2(-12, 3)
@@ -350,19 +353,25 @@ texture = SubResource("GradientTexture2D_g2tj6")
 script = ExtResource("4_0nstw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(89, 58)
+position = Vector2(90, 87)
 shape = SubResource("RectangleShape2D_cc3mk")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-4, 85)
+position = Vector2(-5, 97.75)
 shape = SubResource("RectangleShape2D_xjf4n")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(102, 77)
+position = Vector2(102, 103)
 shape = SubResource("RectangleShape2D_3k8hg")

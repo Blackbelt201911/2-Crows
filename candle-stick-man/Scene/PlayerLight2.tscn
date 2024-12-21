@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://fohgd5tq1vwn"]
+
+[ext_resource type="Script" path="res://Scripts/ItemGlobal.gd" id="1_ghg0f"]
+
+[sub_resource type="Gradient" id="Gradient_ti2ta"]
+offsets = PackedFloat32Array(0, 0.779221)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_llvix"]
+gradient = SubResource("Gradient_ti2ta")
+fill = 1
+fill_from = Vector2(0.477064, 0.481651)
+fill_to = Vector2(1, 0.00917431)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xceji"]
+radius = 27.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(1, -2)
+color = Color(0.933883, 0.63844, 0.315344, 1)
+energy = 1.6
+texture = SubResource("GradientTexture2D_llvix")
+script = ExtResource("1_ghg0f")
+
+[node name="LightRange" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xceji")
+debug_color = Color(0.588235, 0.52549, 0.45098, 0)

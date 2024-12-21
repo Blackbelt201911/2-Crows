@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://yblwsy65mqs2"]
+
+[ext_resource type="Texture2D" uid="uid://13q23e3qgigr" path="res://Assest/Derpy_Snowflake.png" id="1_ksis6"]
+[ext_resource type="Script" path="res://Scripts/SnowFlack.gd" id="2_owio1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3tadk"]
+radius = 5.09902
+
+[sub_resource type="Gradient" id="Gradient_ti2ta"]
+offsets = PackedFloat32Array(0, 0.779221)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3nvq0"]
+gradient = SubResource("Gradient_ti2ta")
+fill = 1
+fill_from = Vector2(0.477064, 0.481651)
+fill_to = Vector2(1, 0.00917431)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_owio1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3tadk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 6
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_ksis6")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(5.96046e-08, -1.19209e-07)
+scale = Vector2(0.625, 0.625)
+color = Color(0.332771, 0.854584, 0.990381, 1)
+energy = 1.6
+texture = SubResource("GradientTexture2D_3nvq0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
