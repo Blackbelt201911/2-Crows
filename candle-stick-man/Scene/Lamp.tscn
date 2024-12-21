@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://8irdp721oajj"]
+
+[ext_resource type="Texture2D" uid="uid://dgwrejqb8m3gw" path="res://Assest/Lamp-Sheet.png" id="1_hdly4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lsci"]
+size = Vector2(4, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qqhe"]
+atlas = ExtResource("1_hdly4")
+region = Rect2(0, 0, 48, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt0pr"]
+atlas = ExtResource("1_hdly4")
+region = Rect2(48, 0, 48, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_183x5"]
+atlas = ExtResource("1_hdly4")
+region = Rect2(96, 0, 48, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21dkq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qqhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt0pr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_183x5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 40.5)
+shape = SubResource("RectangleShape2D_6lsci")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -12)
+sprite_frames = SubResource("SpriteFrames_21dkq")

@@ -1,15 +1,15 @@
 extends CollisionShape2D
 
 @onready var playerScript = get_node("") 
-@onready var PlayerLight = $"../PointLight2D"
-@onready var PlayerLightRange = $"../LightRange"
+@onready var PlayerLight = $PointLight2D2
+@onready var PlayerLightRange = $LightRange
 
 #var warm1 = 51
 #var warm2 = 45
 #var warm3 = 35
 
 func _ready() -> void:
-	pass
+	_Oil()
 
 
 func _process(delta: float) -> void:

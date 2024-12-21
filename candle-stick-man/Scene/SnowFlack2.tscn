@@ -17,6 +17,8 @@ fill_from = Vector2(0.477064, 0.481651)
 fill_to = Vector2(1, 0.00917431)
 
 [node name="Area2D" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("2_owio1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -31,5 +33,7 @@ texture = ExtResource("1_ksis6")
 position = Vector2(5.96046e-08, -1.19209e-07)
 scale = Vector2(0.625, 0.625)
 color = Color(0.332771, 0.854584, 0.990381, 1)
-energy = 0.74
+energy = 1.6
 texture = SubResource("GradientTexture2D_3nvq0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

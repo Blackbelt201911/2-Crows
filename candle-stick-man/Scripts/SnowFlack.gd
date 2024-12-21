@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 	if player:  # Check if player is not null
 		distance = global_position.distance_to(player.global_position)
 		Move(delta)
+		body_entered.connect(_on_body_entered)
 	else:
 		print("Player node not found!")
 
@@ -30,3 +31,8 @@ func Move(delta: float):
 	if distance >= 200:
 		print("die")
 		queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("SnowFlackDel"):
+		get_tree().change_scene_to_file("res://Scene/Death.tscn")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgaaxjufiy5si"]
+
+[ext_resource type="Texture2D" uid="uid://bskc8g0vly4ly" path="res://Assest/2-Crows/The_Cold_Embrace_Of_Death.png" id="1_x8glv"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(19.32, 19.32)
+texture = ExtResource("1_x8glv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1.99998, -3.00001)
+scale = Vector2(0.1, -0.278)
