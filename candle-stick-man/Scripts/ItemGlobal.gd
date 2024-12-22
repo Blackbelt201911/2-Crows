@@ -10,13 +10,13 @@ var acceleration = 0.1
 var camera_speed = 5
 var damping_factor = 0.09 # The lower the value, the smoother the movement
 var PlayerHelth = 1
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var Oil = false
+var Pwax = false
+var Swax = false
+var Shoe = false
+var Cover = false
+var HasOil = false
+var HasPwax = false
+var HasSwax = false
+var HasShoe = false
+var HasCover = false

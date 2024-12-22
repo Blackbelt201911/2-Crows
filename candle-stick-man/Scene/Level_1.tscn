@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cgui4xsdbrbic"]
+[gd_scene load_steps=10 format=4 uid="uid://cgui4xsdbrbic"]
 
 [ext_resource type="PackedScene" uid="uid://dwwugu8yky0nj" path="res://Scene/Player.tscn" id="1_y3pq2"]
 [ext_resource type="PackedScene" uid="uid://fohgd5tq1vwn" path="res://Scene/PlayerLight2.tscn" id="2_1v4rc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/PosPotGen.gd" id="2_ugk37"]
 [ext_resource type="Texture2D" uid="uid://d3kki83eu38sn" path="res://Assest/Stone_ground.png" id="3_dqyps"]
 [ext_resource type="Script" path="res://Scripts/SpawnFlack.gd" id="4_7rbm6"]
+[ext_resource type="PackedScene" uid="uid://c0tiy7gcc1wyy" path="res://Scene/ItemPage.tscn" id="7_10sha"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_23esj"]
 texture = ExtResource("3_dqyps")
@@ -26,6 +27,7 @@ position = Vector2(16, 1)
 position = Vector2(-1, -1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(16, 1)
 zoom = Vector2(4, 4)
 script = ExtResource("2_gr4m3")
 
@@ -48,8 +50,23 @@ position = Vector2(168, -96)
 [node name="Pos6" type="Marker2D" parent="Camera2D"]
 position = Vector2(151, -78)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="Control" parent="Camera2D/CanvasLayer" instance=ExtResource("7_10sha")]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -249.0
+offset_right = -300.0
+offset_bottom = -249.0
+scale = Vector2(0.560298, 0.633431)
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.27326, 0.273261, 0.279726, 0.964706)
+color = Color(0.32846, 0.328462, 0.335829, 0.964706)
 
 [node name="Pos Pot" type="Node2D" parent="."]
 script = ExtResource("2_ugk37")

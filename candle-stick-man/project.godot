@@ -25,6 +25,11 @@ Player=""
 SnowFlackDel=""
 Lights=""
 LightRange=""
+Oil=""
+Pwax=""
+Swax=""
+Cover=""
+Shoe=""
 
 [input]
 

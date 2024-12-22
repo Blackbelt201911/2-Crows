@@ -1,9 +1,5 @@
 extends CharacterBody2D
 
-var speed = Globals.speed
-var friction = Globals.friction
-var acceleration = Globals.acceleration
-
 # Persist the last move direction
 var lastMove = "Right"
 
@@ -48,7 +44,10 @@ func _DoArtStuff():
 		elif lastMove == "Forward":
 			$AnimatedSprite2D.play("IF")
 
-func _physics_process(delta):
+func _physics_process(delta):	
+	var speed = Globals.speed
+	var friction = Globals.friction
+	var acceleration = Globals.acceleration
 	var direction = get_input()
 	if direction.length() > 0:
 		velocity = velocity.lerp(direction.normalized() * speed, acceleration)

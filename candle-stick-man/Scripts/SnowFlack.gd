@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 	if player:  # Check if player is not null
 		distance = global_position.distance_to(player.global_position)
 		Move(delta)
-		body_entered.connect(_on_body_entered)
 	else:
 		print("Player node not found!")
 
@@ -34,4 +33,4 @@ func Move(delta: float):
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("SnowFlackDel"):
-		Globals.PlayerHelth = Globals.PlayerHelth - 2
+		Globals.PlayerHelth = Globals.PlayerHelth - 1

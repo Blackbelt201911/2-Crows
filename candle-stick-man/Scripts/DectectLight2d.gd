@@ -8,8 +8,17 @@ var distance = 0.0
 var warm1 = Globals.warm1
 var warm2 = Globals.warm2
 var warm3 = Globals.warm3
+var stopUi = false
 
 @onready var animation_player = $AnimatedSprite2D
+@onready var control = $Camera2D/CanvasLayer/Control
+@onready var Oils = get_tree().get_nodes_in_group("Oil")
+@onready var Pwaxs = get_tree().get_nodes_in_group("Pwax")
+@onready var Swaxs = get_tree().get_nodes_in_group("Swax")
+@onready var Covers = get_tree().get_nodes_in_group("Cover")
+@onready var Shoes = get_tree().get_nodes_in_group("Shoe")
+
+
 
 func _ready():
 	match self.name:
@@ -52,7 +61,56 @@ func _process(delta):
 
 
 	if heat > 125:
-		queue_free()
+		var ranvalue = randi_range(1,5)
+		match ranvalue:
+			1:
+				if stopUi == false and not Globals.HasOil:
+					for oil in Oils:
+						stopUi = true
+						oil.visible = true
+						await get_tree().create_timer(3.5).timeout
+						Globals.Oil = true
+						Globals.HasOil = true
+						oil.visible = false
+			2:
+				if stopUi == false and not Globals.HasPwax:
+					for Pwax in Pwaxs:
+						stopUi = true
+						Pwax.visible = true
+						await get_tree().create_timer(3.5).timeout
+						Globals.Pwax = true
+						Globals.HasPwax = true
+						Pwax.visible = false
+			3:
+				if stopUi == false and not Globals.HasSwax:
+					for Swax in Swaxs:
+						stopUi = true
+						Swax.visible = true
+						await get_tree().create_timer(3.5).timeout
+						Globals.Swax = true
+						Globals.HasSwax = true
+						Swax.visible = false
+			4:
+				if stopUi == false and not Globals.HasShoe:
+					for Shoe in Shoes:
+						stopUi = true
+						print("shoe")
+						Shoe.visible = true
+						await get_tree().create_timer(3.5).timeout
+						Globals.Shoe = true
+						Globals.HasShoe = true
+						print("shoe 2")
+						Shoe.visible = false
+			
+			5:
+				if stopUi == false and not Globals.HasCover:
+					for Cover in Covers:
+						stopUi = true
+						Cover.visible = true
+						await get_tree().create_timer(3.5).timeout
+						Globals.Cover = true
+						Globals.HasCover = true
+						Cover.visible = false
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):

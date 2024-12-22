@@ -1,0 +1,227 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0tiy7gcc1wyy"]
+
+[ext_resource type="Texture2D" uid="uid://dm71wvivqfaqa" path="res://Assest/Oil.png" id="1_n251k"]
+[ext_resource type="Texture2D" uid="uid://dk6hyrucqwl0e" path="res://Assest/Upgrades.png" id="2_c6kcj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qfth"]
+atlas = ExtResource("2_c6kcj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn7bq"]
+atlas = ExtResource("2_c6kcj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeaj7"]
+atlas = ExtResource("2_c6kcj")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0118x"]
+atlas = ExtResource("2_c6kcj")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4y6kk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qfth")
+}],
+"loop": true,
+"name": &"Cover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn7bq")
+}],
+"loop": true,
+"name": &"Shoe",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeaj7")
+}],
+"loop": true,
+"name": &"greend wax",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0118x")
+}],
+"loop": true,
+"name": &"other wax",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Oil" type="Node2D" parent="." groups=["Oil"]]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Oil"]
+position = Vector2(567, 135)
+scale = Vector2(14.8959, 13.4564)
+texture = ExtResource("1_n251k")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Oil"]
+offset_left = 363.0
+offset_top = 227.0
+offset_right = 756.0
+offset_bottom = 330.0
+
+[node name="Label2" type="Label" parent="Oil/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 75
+text = "Oil"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Oil"]
+offset_left = 133.0
+offset_top = 369.0
+offset_right = 1029.0
+offset_bottom = 472.0
+
+[node name="Label" type="Label" parent="Oil/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Makes you burn brighter"
+
+[node name="Shoe" type="Node2D" parent="." groups=["Shoe"]]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Shoe"]
+position = Vector2(536, 117)
+scale = Vector2(13.75, 14.1875)
+sprite_frames = SubResource("SpriteFrames_4y6kk")
+animation = &"Shoe"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Shoe"]
+offset_left = 363.0
+offset_top = 227.0
+offset_right = 756.0
+offset_bottom = 330.0
+
+[node name="Label2" type="Label" parent="Shoe/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 75
+text = "Ice Shoes"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shoe"]
+offset_left = 133.0
+offset_top = 369.0
+offset_right = 1029.0
+offset_bottom = 472.0
+
+[node name="Label" type="Label" parent="Shoe/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Makes you move faster but its slipy"
+
+[node name="Poisen Wax" type="Node2D" parent="." groups=["Pwax"]]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Poisen Wax"]
+position = Vector2(565, 119)
+scale = Vector2(13.75, 14.1875)
+sprite_frames = SubResource("SpriteFrames_4y6kk")
+animation = &"greend wax"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Poisen Wax"]
+offset_left = 363.0
+offset_top = 227.0
+offset_right = 756.0
+offset_bottom = 330.0
+
+[node name="Label2" type="Label" parent="Poisen Wax/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 75
+text = "Poison wax"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Poisen Wax"]
+offset_left = 133.0
+offset_top = 369.0
+offset_right = 1029.0
+offset_bottom = 472.0
+
+[node name="Label" type="Label" parent="Poisen Wax/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 39
+text = "Poison mixed with your wax as it drips to the floor"
+
+[node name="Strange Wax" type="Node2D" parent="." groups=["Swax"]]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Strange Wax"]
+position = Vector2(565, 119)
+scale = Vector2(13.75, 14.1875)
+sprite_frames = SubResource("SpriteFrames_4y6kk")
+animation = &"other wax"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Strange Wax"]
+offset_left = 363.0
+offset_top = 227.0
+offset_right = 756.0
+offset_bottom = 330.0
+
+[node name="Label2" type="Label" parent="Strange Wax/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 75
+text = "Strange wax"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Strange Wax"]
+offset_left = 133.0
+offset_top = 369.0
+offset_right = 1029.0
+offset_bottom = 472.0
+
+[node name="Label" type="Label" parent="Strange Wax/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Something mixed with your wax as it drips to the floor"
+
+[node name="Cover" type="Node2D" parent="." groups=["Cover"]]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cover"]
+position = Vector2(565, 119)
+scale = Vector2(13.75, 14.1875)
+sprite_frames = SubResource("SpriteFrames_4y6kk")
+animation = &"Cover"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Cover"]
+offset_left = 363.0
+offset_top = 227.0
+offset_right = 756.0
+offset_bottom = 330.0
+
+[node name="Label2" type="Label" parent="Cover/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 75
+text = "Candle snuffer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Cover"]
+offset_left = 133.0
+offset_top = 369.0
+offset_right = 1029.0
+offset_bottom = 472.0
+
+[node name="Label" type="Label" parent="Cover/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Protects you from a hit at the price of your heat"
